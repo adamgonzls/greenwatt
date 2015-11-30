@@ -1,0 +1,72 @@
+/****************************************
+  Components
+*****************************************/
+
+.tile {
+	height: 300px;
+	margin: 5px;
+	border: 1px solid $med-grey;
+	position: relative;
+	box-shadow: 0 2px 2px $med-grey;
+
+	@include wider-than(600px) {
+		width: calc(33.33% - 10px);
+	}
+}
+
+.tile-image {
+	height: 100%;
+	padding-top: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50% 10%;
+}
+
+.tile-details {
+	height: 40%;
+	width: 100%;
+	position: absolute;
+	background-color: $light-grey;
+	border-top: 1px solid $med-grey;
+	bottom: 0;
+	padding: 10px;
+}
+
+.control {
+	position: absolute;
+	bottom: 10%;
+	right: 5%;
+	// background-color: cyan;
+}
+
+.control > button {
+	font-size: .8em;
+	color: $white;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	border: 1px solid $med-grey;
+	border-radius: 15px;
+	background-color: $lime-green;
+}
+
+.media-object {
+	display: flex;
+	// background-color: red;
+	margin: 20px 0;
+	
+}
+
+.media-graphic {
+	min-height: 100px;
+	width: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	// background-color: orange;
+}
+
+.media-content {
+	flex: 1;
+	// background-color: $light-grey;
+	padding: 10px;
+	text-align: justify;
+}

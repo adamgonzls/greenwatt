@@ -1,0 +1,201 @@
+/****************************************
+  Inherited Syles
+*****************************************/
+/*
+See this explanation for details
+https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+html {
+  box-sizing: border-box;
+  color: #444;
+  font: 12pt 'Open Sans', Arial;
+  font-weight: 300; }
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  color: inherit;
+  font: inherit; }
+
+/****************************************
+  Defaults
+*****************************************/
+body {
+  background: radial-gradient(rgba(48, 205, 74, 0.7), #0399d3); }
+
+header {
+  background-color: #fff; }
+
+h1 {
+  margin: 0; }
+
+h2 {
+  margin: 0; }
+
+p {
+  margin: 0; }
+
+/****************************************
+  Helpers
+*****************************************/
+/****************************************
+  Layout
+*****************************************/
+.page {
+  margin: 0 auto;
+  width: 960px;
+  background-color: #fff; }
+
+.page > header {
+  position: relative; }
+
+.icon {
+  position: absolute;
+  color: #0399D3; }
+
+.icon > span {
+  color: #84c12d; }
+
+.primary-nav {
+  padding: 10px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #d9d9d9; }
+
+.primary-nav > a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 10px; }
+
+.user-selections {
+  height: 50px;
+  background-color: #e8e8e8; }
+
+.showcase {
+  height: 400px;
+  background: url(../images/fan_hugger1000x500.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative; }
+
+.banner {
+  display: flex;
+  padding: 20px;
+  position: absolute;
+  height: 35%;
+  background-color: rgba(250, 250, 250, 0.8);
+  bottom: 15%;
+  left: 0;
+  right: 0; }
+
+.banner-text {
+  font-size: 2em;
+  padding: 20px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.logos {
+  display: flex;
+  width: 100%; }
+
+.logo {
+  width: 15%;
+  margin: 0 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.products > section {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 15px 20px; }
+  @media screen and (min-width: 600px) {
+    .products > section {
+      padding: 30px 40px; } }
+
+.tiles {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    .tiles {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row; } }
+
+.about-content {
+  padding: 40px; }
+
+.about-content > h1 {
+  margin: 5px; }
+
+.about-content h2 {
+  margin: 0;
+  margin: 5px 0; }
+
+.about-content p {
+  margin: 0 10px; }
+
+.about-details > h2 {
+  border-bottom: 1px solid #d9d9d9; }
+
+/****************************************
+  Components
+*****************************************/
+.tile {
+  height: 300px;
+  margin: 5px;
+  border: 1px solid #d9d9d9;
+  position: relative;
+  box-shadow: 0 2px 2px #d9d9d9; }
+  @media screen and (min-width: 600px) {
+    .tile {
+      width: calc(33.33% - 10px); } }
+
+.tile-image {
+  height: 100%;
+  padding-top: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 10%; }
+
+.tile-details {
+  height: 40%;
+  width: 100%;
+  position: absolute;
+  background-color: #eee;
+  border-top: 1px solid #d9d9d9;
+  bottom: 0;
+  padding: 10px; }
+
+.control {
+  position: absolute;
+  bottom: 10%;
+  right: 5%; }
+
+.control > button {
+  font-size: .8em;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  background-color: #84c12d; }
+
+.media-object {
+  display: flex;
+  margin: 20px 0; }
+
+.media-graphic {
+  min-height: 100px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.media-content {
+  flex: 1;
+  padding: 10px;
+  text-align: justify; }

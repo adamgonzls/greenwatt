@@ -1,0 +1,17 @@
+//Responsive
+
+@mixin wider-than($min-width) {
+	@media screen and (min-width: $min-width) {
+		@content;
+	}
+}
+
+@mixin less-than($max-width) {
+	@media screen and (min-width: $min-width) {
+		@content;
+	}
+}
+
+@mixin grey-border {
+	border-bottom: 1px solid $med-grey;
+}

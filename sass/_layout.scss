@@ -1,0 +1,195 @@
+/****************************************
+  Inherited Syles
+*****************************************/
+
+/*
+See this explanation for details
+https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+
+html {
+    box-sizing: border-box;
+    color: #444;
+    font: 12pt 'Open Sans', Arial;
+    font-weight: 300;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    color: inherit;
+    font: inherit;
+}
+
+/****************************************
+  Defaults
+*****************************************/
+
+body {
+	background: radial-gradient(rgba(48, 205, 74, .7), 
+    rgba(3, 153, 211, 1));
+}
+
+header {
+	background-color: $white;
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+/****************************************
+  Helpers
+*****************************************/
+
+
+/****************************************
+  Layout
+*****************************************/
+
+.page {
+	margin: 0 auto;
+	width: 960px;
+	// padding: 0 50px;
+	background-color: $white;
+}
+
+.page > header {
+	position: relative;
+}
+
+.icon {
+	position: absolute;
+	color: $blue;
+}
+
+.icon > span {
+	color: $lime-green;
+}
+
+.primary-nav {
+	padding: 10px;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	@include grey-border;
+}
+
+.primary-nav > a {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 10px 20px;
+	margin: 10px
+}
+
+.header-text {
+	// padding: 0 40px;
+}
+
+.user-selections {
+	height: 50px;
+	background-color: $dark-grey;
+}
+
+.showcase {
+	height: 400px;
+	background: url(../images/fan_hugger1000x500.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+}
+
+.banner {
+	display: flex;
+	padding: 20px;
+	position: absolute;
+	height: 35%;
+	background-color: rgba(250,250,250,.8);
+	bottom: 15%;
+	left: 0;
+	right: 0;
+}
+
+.banner-text {
+	font-size: 2em;
+	padding: 20px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.logos {
+	display: flex;
+	width: 100%;
+}
+
+.logo {
+	width: 15%;
+	margin: 0 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+// .content {
+// 	// background-color: $white;
+// 	// position: relative;
+// }
+
+// .tagline {
+// 	padding: 5px;
+// 	position: absolute;
+// 	z-index: 1;
+// }
+
+.products > section {
+	@include grey-border;
+	padding: 15px 20px;	
+	@include wider-than(600px) {
+		padding: 30px 40px;		
+	}
+	
+}
+
+.tiles {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	@include wider-than(600px) {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+}
+
+.about-content {
+	padding: 40px;
+}
+
+.about-content > h1 {
+	margin: 5px;
+}
+
+.about-content h2 {
+	margin: 0;
+	margin: 5px 0;
+}
+
+.about-content p {
+	margin: 0 10px;
+}
+
+.about-details > h2 {
+	
+	@include grey-border;
+	
+}

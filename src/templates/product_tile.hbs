@@ -1,0 +1,15 @@
+{{#each this}}
+	<div data-id="{{product_id}}" class="tile">
+		<div class="tile-image"
+			style="background-image: url(/images/{{file_path}}.jpg);"> 
+		</div>
+		<div class="tile-details">
+			<div class="tile-details1">{{brand_name}}</div> {{!-- another table --}}
+			<div class="tile-details2">{{model}}</div>
+			<div class="control">
+				<button>Info</button>
+				<button>Choose</button>
+			</div>
+		</div>
+	</div>
+{{/each}}
