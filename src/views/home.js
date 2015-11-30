@@ -30,22 +30,18 @@ var HomeView = Backbone.View.extend({
 		fanCollection.fetch().done(function(fans) {
 		
 			// raw non-backbone array of objects
-			console.log('got to fans');
 			var result = productTileTemplate(fans)
 			$('.tiles.fans').html(result);
-
-		//******turn off for now -ask kevin and brad****
-		// var bulbCollection = new BulbCollection()
-		// bulbCollection.fetch().done(function(bulbs) {
-		
-		// 	// raw non-backbone array of objects
-		// 	console.log(bulbs);
-		// 	var result = productTileTemplate(bulbs)
-		// 	$('.tiles.bulbs').html(result);
-
-
 		})
 
+		var bulbCollection = new BulbCollection()
+		bulbCollection.fetch().done(function(bulbs) {
+		
+			// raw non-backbone array of objects
+			var result = productTileTemplate(bulbs)
+			$('.tiles.bulbs').html(result);
+
+		})
 	}
 })
 

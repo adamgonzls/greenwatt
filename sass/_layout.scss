@@ -24,10 +24,10 @@ html {
   Defaults
 *****************************************/
 
-body {
-	background: radial-gradient(rgba(48, 205, 74, .7), 
-    rgba(3, 153, 211, 1));
-}
+// body {
+// 	background: radial-gradient(rgba(48, 205, 74, .7), 
+//     rgba(3, 153, 211, 1));
+// }
 
 header {
 	background-color: $white;
@@ -53,13 +53,31 @@ p {
 /****************************************
   Layout
 *****************************************/
-
 .page {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	background: radial-gradient(rgba(48, 205, 74, .7), 
+    rgba(3, 153, 211, 1));
+}
+
+.content {
+	flex: 1;
+	background-color: green;
+}
+
+.page > div {
+	min-height: 100%;
 	margin: 0 auto;
 	width: 960px;
-	// padding: 0 50px;
 	background-color: $white;
 }
+
+// .page {
+// 	margin: 0 auto;
+// 	width: 960px;
+// 	background-color: $white;
+// }
 
 .page > header {
 	position: relative;
@@ -192,4 +210,9 @@ p {
 	
 	@include grey-border;
 	
+}
+
+.product-comparison-chart {
+	height: 200px;
+	width: 500px;
 }

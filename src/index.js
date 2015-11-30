@@ -23,8 +23,6 @@ var productProfileView = new ProductProfileView();
 
 $(function() {
 
-	console.log('hi from index.js')
-
 	var AppRouter = Backbone.Router.extend({
 	    
 	    routes: {

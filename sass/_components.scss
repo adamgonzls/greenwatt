@@ -3,10 +3,10 @@
 *****************************************/
 
 .tile {
-	height: 300px;
+	// height: 100%;
 	margin: 5px;
 	border: 1px solid $med-grey;
-	position: relative;
+	// position: relative;
 	box-shadow: 0 2px 2px $med-grey;
 
 	@include wider-than(600px) {
@@ -15,17 +15,16 @@
 }
 
 .tile-image {
-	height: 100%;
+	height: 200px;
 	padding-top: 10px;
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: 50% 10%;
+	background-position: center;
 }
 
 .tile-details {
 	height: 40%;
 	width: 100%;
-	position: absolute;
 	background-color: $light-grey;
 	border-top: 1px solid $med-grey;
 	bottom: 0;
@@ -33,9 +32,8 @@
 }
 
 .control {
-	position: absolute;
-	bottom: 10%;
-	right: 5%;
+	// bottom: 10%;
+	// right: 5%;
 	// background-color: cyan;
 }
 
