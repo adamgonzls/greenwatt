@@ -9,7 +9,7 @@ var sass = require('gulp-sass');
 //build
 
 gulp.task('clean', function (cb) {
-	del('js/bundle.js');
+	del('./public/scripts/bundle.js');
 	cb();
 });
 

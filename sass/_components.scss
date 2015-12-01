@@ -9,6 +9,10 @@
 	// position: relative;
 	box-shadow: 0 2px 2px $med-grey;
 
+	&.selected {
+		box-shadow: 0 2px 8px $blue;
+	}
+
 	@include wider-than(600px) {
 		width: calc(33.33% - 10px);
 	}
@@ -45,11 +49,11 @@
 	border: 1px solid $med-grey;
 	border-radius: 15px;
 	background-color: $lime-green;
+	outline: 0;
 }
 
 .media-object {
 	display: flex;
-	// background-color: red;
 	margin: 20px 0;
 	
 }
@@ -59,12 +63,19 @@
 	width: 100px;
 	background-size: contain;
 	background-repeat: no-repeat;
-	// background-color: orange;
 }
 
 .media-content {
 	flex: 1;
-	// background-color: $light-grey;
 	padding: 10px;
 	text-align: justify;
+}
+
+.compare-details {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.compare-details td {
+	padding: 10px;
 }

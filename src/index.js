@@ -28,7 +28,7 @@ $(function() {
 	    routes: {
 	    	'(/)': 'index',
 	    	'about(/)': 'about',
-	    	'compare(/)': 'compare',
+	    	'compare/:p1Id/:p2Id(/)': 'compare',
 	        // 'add-product(/)': 'addProduct',
 	        'product/:id(/)': 'productProfile',
 	        '*actions': 'defaultRoute'
@@ -42,9 +42,8 @@ $(function() {
 	    	aboutView.render();
 	    },
 
-	    compare: function() {
-	    	console.log('compare');
-	    	compareView.render();
+	    compare: function(p1Id, p2Id) {
+	    	compareView.render(p1Id, p2Id);
 	    },
 
 	    // addProduct: function() {

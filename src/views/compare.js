@@ -7,12 +7,25 @@ var pageTemplate = require('../templates/compare.hbs');
 var CompareView = Backbone.View.extend({
 	el: '.content',
 
-	render: function() {
+	render: function(p1Id, p2Id) {
 		var result = pageTemplate()
 
 		this.$el.html(result)
 
-		console.log('before chart');
+		'api/product/compare' + p1Id + '/' + p2Id
+		console.log(p1Id + 'hello');
+
+		$.get('api/product/compare/' + p1Id + '/' + p2Id).then(function(data) {
+
+			data[0].fan_watts
+
+
+
+
+
+
+		})
+
 
 
 		new Highcharts.Chart({
@@ -21,7 +34,7 @@ var CompareView = Backbone.View.extend({
 	            type: 'line'
 	        },
 	        title: {
-	            text: 'Energy Cost'
+	            text: 'Cost Over Time'
 	        },
 	        xAxis: {
 	            categories: ['Purchase Date', 'Year 3']
@@ -41,19 +54,9 @@ var CompareView = Backbone.View.extend({
 		})
 		
 
-		// var chartTemplate = new ChartTemplate()
-		// chartTemplate.fetch().done(function(chart) {
-	
-		// // raw non-backbone array of objects
-		// console.log('got to charts');
-		// var result = pageTemplate(chart)
-		// $('.product-comparison-chart').html(result);
 
-		// })
 	}
 })
 
 module.exports = CompareView;
 
-
-// chart div   .product-comparison-chart

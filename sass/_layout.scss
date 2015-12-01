@@ -24,11 +24,6 @@ html {
   Defaults
 *****************************************/
 
-// body {
-// 	background: radial-gradient(rgba(48, 205, 74, .7), 
-//     rgba(3, 153, 211, 1));
-// }
-
 header {
 	background-color: $white;
 }
@@ -57,13 +52,17 @@ p {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	background: radial-gradient(rgba(48, 205, 74, .7), 
-    rgba(3, 153, 211, 1));
+	background: radial-gradient(rgba($rgblime-green, .7), 
+    rgba($rgbblue, 1));
 }
 
 .content {
 	flex: 1;
 	background-color: green;
+}
+
+.content > div {
+	margin: 0 auto;
 }
 
 .page > div {

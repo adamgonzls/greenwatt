@@ -30,6 +30,26 @@ router.get('/', function(req, res) {
 
   });
 
+})
+
+
+router.get('/compare/:p1Id/:p2Id', function(req, res) {
+  //debug('GET' + req.path)
+
+  	var sqlVars = {
+  		product1_id: req.params.p1Id,
+  		product2_id: req.params.p2Id
+  	}
+
+    db.selectFile('compare', sqlVars, function(error, rows, fields) {
+	    if (error) {
+	        debug('DB Error', error)
+	        return res.status(500).send({ error })
+	    }
+
+    	res.json(rows.map(changeCase))
+
+  	});
 
 })
 

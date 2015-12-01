@@ -47,6 +47,9 @@ p {
   flex: 1;
   background-color: green; }
 
+.content > div {
+  margin: 0 auto; }
+
 .page > div {
   min-height: 100%;
   margin: 0 auto;
@@ -161,6 +164,8 @@ p {
   margin: 5px;
   border: 1px solid #d9d9d9;
   box-shadow: 0 2px 2px #d9d9d9; }
+  .tile.selected {
+    box-shadow: 0 2px 8px #0399D3; }
   @media screen and (min-width: 600px) {
     .tile {
       width: calc(33.33% - 10px); } }
@@ -187,7 +192,8 @@ p {
   padding: 5px 10px;
   border: 1px solid #d9d9d9;
   border-radius: 15px;
-  background-color: #84c12d; }
+  background-color: #84c12d;
+  outline: 0; }
 
 .media-object {
   display: flex;
@@ -203,3 +209,10 @@ p {
   flex: 1;
   padding: 10px;
   text-align: justify; }
+
+.compare-details {
+  width: 60%;
+  margin: 0 auto; }
+
+.compare-details td {
+  padding: 10px; }
