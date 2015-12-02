@@ -7,10 +7,8 @@
  */
 
 .tile {
-	// height: 100%;
 	margin: 5px;
 	border: 1px solid $med-grey;
-	// position: relative;
 	box-shadow: 0 2px 2px $med-grey;
 
 	&.selected {
@@ -79,6 +77,14 @@
 /**
  * Compare
  */
+
+ .compare-tile {
+ 	margin: 5px;
+
+ 	@include wider-than(600px) {
+ 		width: calc(45% - 10px);
+ 	}
+ }
 
 .highlight {
 	background-color: rgba($rgblime-green, .2);

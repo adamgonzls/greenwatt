@@ -5,7 +5,6 @@ var calc = require('../utilities/calculations');
 var pageTemplate = require('../templates/compare.hbs');
 
 
-
 var CompareView = Backbone.View.extend({
 	el: '.content',
 
@@ -19,15 +18,11 @@ var CompareView = Backbone.View.extend({
 		$.get('/api/product/compare/' + p1Id + '/' + p2Id).then(function(data) {
 			
 			$.get('/api/product/' + p1Id + '/image').then(function(image) {
-				console.log(image)
-				$('.compare-image1').css({'background-image': 'url(/images/' + image + ')', 
-					'box-shadow': '0 0 1px 1px #84c12d'});
+				$('.compare-image1').css('background-image', 'url(/images/' + image + ')');
 			})
 			
 			$.get('/api/product/' + p2Id + '/image').then(function(image) {
-				console.log(image)
-				$('.compare-image2').css({'background-image': 'url(/images/' + image + ')', 
-					'box-shadow': '0 0 1px 1px #0399D3'});
+				$('.compare-image2').css('background-image', 'url(/images/' + image + ')');
 			})
 		
 		var kWhCost = 0.1293;
@@ -35,8 +30,8 @@ var CompareView = Backbone.View.extend({
 		console.log(data[0], data[1]);
 		console.log(calc.yearCost);
 		
-		$('.compare-image1').append(data[0].model);
-		$('.compare-image2').append(data[1].model);
+		$('.compare-image1').append('<span>' + data[0].model + '</span>');
+		$('.compare-image2').append('<span>' + data[1].model + '</span>');
 		$('.brand1').text(data[0].brand_id);
 		$('.brand2').text(data[1].brand_id);
 		$('.model1').text(data[0].model);
@@ -45,26 +40,21 @@ var CompareView = Backbone.View.extend({
 		$('.price2').text('$' + data[1].price);
 		$('.watts1').text(data[0].watts);
 		$('.watts2').text(data[1].watts);
-		$('.eCost1').text('$' + calc.yearCost(data[0].watts, kWhCost).toFixed(2));
-		$('.eCost2').text('$' + calc.yearCost(data[1].watts, kWhCost).toFixed(2));
+		$('.mCost1').text('$' + calc.monthCost(data[0].watts, kWhCost).toFixed(2));
+		$('.mCost2').text('$' + calc.monthCost(data[1].watts, kWhCost).toFixed(2));
+		$('.yCost1').text('$' + calc.yearCost(data[0].watts, kWhCost).toFixed(2));
+		$('.yCost2').text('$' + calc.yearCost(data[1].watts, kWhCost).toFixed(2));
 		// $('.width1').text(data[0].width);
 		// $('.width2').text(data[1].width);
 		$('.airflow1').text(data[0].airflow);
 		$('.airflow2').text(data[1].airflow);
-		$('.thermostat1').text(data[0].thermostat);
-		$('.thermostat2').text(data[1].thermostat);
-		$('.remote1').text(data[0].remote);
-		$('.remote2').text(data[1].remote);
-
-		// $('.compare-details tr').hover(
-		// 	function () {
-		//     	$(this).css("background","yellow");
-		// }, 
-		// 	function () {
-		//     	$(this).css("background","");
-		// 	}
-		// );
+		$('.thermostat1').text(data[0].thermostat ? 'Yes' : 'No');
+		$('.thermostat2').text(data[1].thermostat ? 'Yes' : 'No');
+		$('.remote1').text(data[0].remote ? 'Yes' : 'No');
+		$('.remote2').text(data[1].remote ? 'Yes' : 'No');
 		
+		// var output = data.isMarried ? 'yes' : 'no';
+
 		$('.compare-details tr').hover
 			(function () {
 				$(this).addClass('highlight');
@@ -99,7 +89,7 @@ var CompareView = Backbone.View.extend({
 		        },
 		        yAxis: {
 		            floor: 0,
-		            ceiling: 800,
+		            ceiling: 1000,
 		            gridLineColor: '#d9d9d9',
 		            title: {
 		                text: 'Cost'

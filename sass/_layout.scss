@@ -222,12 +222,35 @@ p {
 }
 
 .compare-images {
-	// width: calc(50% - 10px);
-	justify-content: center;
+	margin: 15px 30px;
+	justify-content: space-around;
+}
+
+.compare-images span {
+	margin: 0;
+	position: relative;
+}
+
+.compare-images span::after {
+	content: ' ';
+	top: 3px;
+	left: -14px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	border-radius: 50%;
+}
+
+.compare-image1 span::after {
+	background-color: $lime-green;
+}
+
+.compare-image2 span::after {
+	background-color: $blue;
 }
 
 .product-comparison-chart {
-	min-height: 300px;
+	min-height: 400px;
 	width: 100%;
 	padding: 30px 0;
 }
@@ -244,3 +267,4 @@ p {
 	border-top: 1px solid $med-grey;
 	border-bottom: 1px solid $med-grey;
 }
+
