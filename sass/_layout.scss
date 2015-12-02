@@ -48,21 +48,13 @@ p {
 /****************************************
   Layout
 *****************************************/
+
 .page {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
 	background: radial-gradient(rgba($rgblime-green, .7), 
     rgba($rgbblue, 1));
-}
-
-.content {
-	flex: 1;
-	background-color: green;
-}
-
-.content > div {
-	margin: 0 auto;
 }
 
 .page > div {
@@ -72,19 +64,15 @@ p {
 	background-color: $white;
 }
 
-// .page {
-// 	margin: 0 auto;
-// 	width: 960px;
-// 	background-color: $white;
-// }
-
-.page > header {
+.page div > header {
 	position: relative;
 }
 
 .icon {
 	position: absolute;
+	left: 30px;
 	color: $blue;
+	vertical-align: center;
 }
 
 .icon > span {
@@ -106,22 +94,35 @@ p {
 	margin: 10px
 }
 
-.header-text {
-	// padding: 0 40px;
+.tagline {
+	position: absolute;
+	left: 30px;
+	top: 45px;
+	z-index: 1;
 }
 
-.user-selections {
-	height: 50px;
-	background-color: $dark-grey;
+/**
+ * Content
+ */
+
+.content {
+	flex: 1;
 }
+
+.content > div {
+	margin: 0 auto;
+}
+
+/**
+ * Showcase
+ */
 
 .showcase {
 	height: 400px;
 	background: url(../images/fan_hugger1000x500.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	position: relative;
+	@include bg-image;
 }
 
 .banner {
@@ -152,21 +153,13 @@ p {
 .logo {
 	width: 15%;
 	margin: 0 20px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
+	@include bg-image;
 }
 
-// .content {
-// 	// background-color: $white;
-// 	// position: relative;
-// }
-
-// .tagline {
-// 	padding: 5px;
-// 	position: absolute;
-// 	z-index: 1;
-// }
+.user-selections {
+	height: 50px;
+	background-color: $dark-grey;
+}
 
 .products > section {
 	@include grey-border;
@@ -174,8 +167,15 @@ p {
 	@include wider-than(600px) {
 		padding: 30px 40px;		
 	}
-	
 }
+
+.products section > h2 {
+	padding-left: 5px;
+}
+
+/**
+ * Product Tiles
+ */
 
 .tiles {
 	display: flex;
@@ -188,8 +188,12 @@ p {
 	}
 }
 
+/**
+ * About Us Page
+ */
+
 .about-content {
-	padding: 40px;
+	padding: 30px 40px;
 }
 
 .about-content > h1 {
@@ -206,12 +210,37 @@ p {
 }
 
 .about-details > h2 {
-	
 	@include grey-border;
-	
+}
+
+/**
+ * Compare Page
+ */
+
+.compare-page {
+	padding: 30px 40px;
+}
+
+.compare-images {
+	// width: calc(50% - 10px);
+	justify-content: center;
 }
 
 .product-comparison-chart {
-	height: 200px;
-	width: 500px;
+	min-height: 300px;
+	width: 100%;
+	padding: 30px 0;
+}
+
+.compare-details {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+
+.compare-details td {
+	text-align: center;
+	padding: 5px;
+	border-top: 1px solid $med-grey;
+	border-bottom: 1px solid $med-grey;
 }

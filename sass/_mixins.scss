@@ -15,3 +15,9 @@
 @mixin grey-border {
 	border-bottom: 1px solid $med-grey;
 }
+
+@mixin bg-image {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}

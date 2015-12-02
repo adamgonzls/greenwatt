@@ -53,6 +53,21 @@ router.get('/compare/:p1Id/:p2Id', function(req, res) {
 
 })
 
+router.get('/:productId/image', function(req, res) {
+  //debug('GET' + req.path)
+
+    db.selectFile('product-image', {id: req.params.productId},function(error, rows, fields) {
+    
+    if (error) {
+        debug('DB Error', error)
+        return res.status(500).send({ error })
+    }
+
+    res.json(rows.map(changeCase)[0].file_path)
+
+  });
+
+})
 
 
 module.exports = router

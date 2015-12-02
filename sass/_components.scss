@@ -2,6 +2,10 @@
   Components
 *****************************************/
 
+/**
+ * Tile: Product, Compare
+ */
+
 .tile {
 	// height: 100%;
 	margin: 5px;
@@ -21,9 +25,7 @@
 .tile-image {
 	height: 200px;
 	padding-top: 10px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	@include bg-image;
 }
 
 .tile-details {
@@ -52,6 +54,10 @@
 	outline: 0;
 }
 
+/**
+ * About
+ */
+
 .media-object {
 	display: flex;
 	margin: 20px 0;
@@ -61,8 +67,7 @@
 .media-graphic {
 	min-height: 100px;
 	width: 100px;
-	background-size: contain;
-	background-repeat: no-repeat;
+	@include bg-image;
 }
 
 .media-content {
@@ -71,11 +76,10 @@
 	text-align: justify;
 }
 
-.compare-details {
-	width: 60%;
-	margin: 0 auto;
-}
+/**
+ * Compare
+ */
 
-.compare-details td {
-	padding: 10px;
+.highlight {
+	background-color: rgba($rgblime-green, .2);
 }

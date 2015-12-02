@@ -25,14 +25,6 @@ var HomeView = Backbone.View.extend({
 
 		this.$el.html(result)
 
-		// var productCollection = new ProductCollection()
-		// productCollection.fetch().done(function(products) {
-			
-		// 	// raw non-backbone array of objects
-		// 	console.log(products);
-		// 	var result = productTileTemplate(products)
-		// 	$('.tiles').html(result);
-
 		var fanCollection = new FanCollection()
 		fanCollection.fetch().done(function(fans) {
 		
@@ -63,9 +55,9 @@ var HomeView = Backbone.View.extend({
 		// Get the current product's ID
 		var p2Id = tile.data('id');
 
-		console.log('a');
+		// console.log('a');
 		if (p1Id && p2Id) {
-			console.log('b');
+			// console.log('b');
 			App.appRouter.navigate('/compare/' + p1Id + '/' + p2Id ,{trigger: true})
 		}
 

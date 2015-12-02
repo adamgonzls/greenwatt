@@ -43,25 +43,20 @@ p {
   flex-direction: column;
   background: radial-gradient(rgba(48, 205, 74, 0.7), #0399d3); }
 
-.content {
-  flex: 1;
-  background-color: green; }
-
-.content > div {
-  margin: 0 auto; }
-
 .page > div {
   min-height: 100%;
   margin: 0 auto;
   width: 960px;
   background-color: #fff; }
 
-.page > header {
+.page div > header {
   position: relative; }
 
 .icon {
   position: absolute;
-  color: #0399D3; }
+  left: 30px;
+  color: #0399D3;
+  vertical-align: center; }
 
 .icon > span {
   color: #84c12d; }
@@ -79,17 +74,32 @@ p {
   padding: 10px 20px;
   margin: 10px; }
 
-.user-selections {
-  height: 50px;
-  background-color: #e8e8e8; }
+.tagline {
+  position: absolute;
+  left: 30px;
+  top: 45px;
+  z-index: 1; }
 
+/**
+ * Content
+ */
+.content {
+  flex: 1; }
+
+.content > div {
+  margin: 0 auto; }
+
+/**
+ * Showcase
+ */
 .showcase {
   height: 400px;
   background: url(../images/fan_hugger1000x500.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 50%;
-  position: relative; }
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .banner {
   display: flex;
@@ -120,6 +130,10 @@ p {
   background-repeat: no-repeat;
   background-position: center center; }
 
+.user-selections {
+  height: 50px;
+  background-color: #e8e8e8; }
+
 .products > section {
   border-bottom: 1px solid #d9d9d9;
   padding: 15px 20px; }
@@ -127,6 +141,12 @@ p {
     .products > section {
       padding: 30px 40px; } }
 
+.products section > h2 {
+  padding-left: 5px; }
+
+/**
+ * Product Tiles
+ */
 .tiles {
   display: flex;
   flex-direction: column;
@@ -137,8 +157,11 @@ p {
       flex-wrap: wrap;
       flex-direction: row; } }
 
+/**
+ * About Us Page
+ */
 .about-content {
-  padding: 40px; }
+  padding: 30px 40px; }
 
 .about-content > h1 {
   margin: 5px; }
@@ -153,13 +176,37 @@ p {
 .about-details > h2 {
   border-bottom: 1px solid #d9d9d9; }
 
+/**
+ * Compare Page
+ */
+.compare-page {
+  padding: 30px 40px; }
+
+.compare-images {
+  justify-content: center; }
+
 .product-comparison-chart {
-  height: 200px;
-  width: 500px; }
+  min-height: 300px;
+  width: 100%;
+  padding: 30px 0; }
+
+.compare-details {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; }
+
+.compare-details td {
+  text-align: center;
+  padding: 5px;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9; }
 
 /****************************************
   Components
 *****************************************/
+/**
+ * Tile: Product, Compare
+ */
 .tile {
   margin: 5px;
   border: 1px solid #d9d9d9;
@@ -175,7 +222,7 @@ p {
   padding-top: 10px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center center; }
 
 .tile-details {
   height: 40%;
@@ -195,6 +242,9 @@ p {
   background-color: #84c12d;
   outline: 0; }
 
+/**
+ * About
+ */
 .media-object {
   display: flex;
   margin: 20px 0; }
@@ -203,16 +253,16 @@ p {
   min-height: 100px;
   width: 100px;
   background-size: contain;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .media-content {
   flex: 1;
   padding: 10px;
   text-align: justify; }
 
-.compare-details {
-  width: 60%;
-  margin: 0 auto; }
-
-.compare-details td {
-  padding: 10px; }
+/**
+ * Compare
+ */
+.highlight {
+  background-color: rgba(48, 205, 74, 0.2); }
